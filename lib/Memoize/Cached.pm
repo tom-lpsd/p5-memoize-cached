@@ -61,6 +61,25 @@ my %defaults = (
     expire => 0,
 );
 
+=head1 METHOD
+
+=over
+
+=item B<default_cached>
+
+Returns a default cached object (Cache::Memcached instance).
+
+=item B<default_key_generator>
+
+Returns a code reference that generates cache key from
+invocation arguments. You can override this routine.
+
+=item B<default_expire_time>
+
+Returns a default cache expire time.
+
+=cut
+
 sub default_cached {
     return $defaults{cached};
 }
@@ -72,6 +91,20 @@ sub default_key_generator {
 sub default_expire_time {
     return $defaults{expire};
 }
+
+=back
+
+=head1 FUNCTIONS
+
+=over
+
+=item B<memoize>
+
+memoize subroutines specified in arguments.
+
+=back
+
+=cut
 
 sub memoize {
     my $pkg = caller;
