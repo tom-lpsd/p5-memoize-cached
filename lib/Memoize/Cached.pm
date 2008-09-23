@@ -1,5 +1,4 @@
 package Memoize::Cached;
-use 5.010;
 use warnings;
 use strict;
 use Carp qw(croak);
