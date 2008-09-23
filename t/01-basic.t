@@ -2,14 +2,13 @@ use 5.010;
 use strict;
 use warnings;
 use Test::More tests => 3;
-use Cache::Memcached;
 use Memoize::Cached 'memoize';
+
+memoize(qw/foo bar/);
 
 sub foo { $_[0] * 100 }
 sub bar { $_[0] * 200 }
 sub baz { $_[0] * 300 }
-
-memoize(qw/foo bar/);
 
 foo(100);
 bar(100);

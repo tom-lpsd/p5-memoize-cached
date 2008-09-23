@@ -9,7 +9,7 @@ our @EXPORT_OK = qw(memoize);
 
 =head1 NAME
 
-Memoize::Cached - memoize function using memcached
+Memoize::Cached - memoize function with memcached
 
 =head1 VERSION
 
@@ -54,7 +54,7 @@ sub import {
 
 my %defaults = (
     cached => Cache::Memcached->new({
-        servers => ['127.0.0.1:11212']
+        servers => ['127.0.0.1:11211']
     }),
     key => sub {
         return join ':', @_;
