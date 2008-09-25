@@ -118,9 +118,9 @@ sub memoize {
     my $cached = $config{cached};
     $cached = $cached->() if ref $cached eq 'CODE';
 
-    croak "cached object does not implement get method"
+    croak "cached object has not implement get method"
         unless $cached->can('get');
-    croak "cached object does not implement set method"
+    croak "cached object has not implement set method"
         unless $cached->can('set');
 
     no strict;
